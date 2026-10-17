@@ -126,6 +126,15 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--purple); outline-
   scrollbar-color: var(--purple) transparent;
 }
 .rail li { scroll-snap-align: start; }
+.video-link { position: relative; display: block; }
+.video-link img { filter: brightness(.7); transition: filter .15s; }
+.video-link:hover img, .video-link:focus-visible img { filter: brightness(.9); }
+.play-badge {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: max-content; max-width: 90%; padding: 10px 12px; text-align: center;
+  background: var(--purple); color: #fff; box-shadow: 4px 4px 0 0 var(--green);
+  font: 700 .75rem/1.2 var(--pixel); text-transform: uppercase;
+}
 
 /* coming soon */
 .soon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(18px, 3vw, 32px); }
