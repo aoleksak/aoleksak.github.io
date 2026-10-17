@@ -113,10 +113,12 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--purple); outline-
 
 /* gameplay media under each app card */
 .card-media { grid-column: 1 / -1; display: grid; gap: 16px; min-width: 0; }
-.trailer, .rail video, .rail img {
+.trailer, .rail iframe, .rail img {
   display: block; width: 100%; height: auto; background: #000;
   border: 2px solid var(--line);
 }
+.trailer { aspect-ratio: 16 / 9; }
+.rail iframe.portrait { aspect-ratio: 9 / 16; }
 .rail {
   display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr);
   gap: 12px; list-style: none; margin: 0; padding: 0 0 8px;
