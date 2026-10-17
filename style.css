@@ -111,6 +111,43 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--purple); outline-
 .chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 14px 0 0; padding: 0; }
 .chips li { padding: 6px 10px; border: 1px solid var(--line); background: #0a0d0b; font: 400 .75rem/1 var(--pixel); text-transform: uppercase; color: var(--text); }
 
+/* gameplay media under each app card */
+.card-media { grid-column: 1 / -1; display: grid; gap: 16px; min-width: 0; }
+.trailer, .rail video, .rail img {
+  display: block; width: 100%; height: auto; background: #000;
+  border: 2px solid var(--line);
+}
+.rail {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr);
+  gap: 12px; list-style: none; margin: 0; padding: 0 0 8px;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-color: var(--purple) transparent;
+}
+.rail li { scroll-snap-align: start; }
+
+/* coming soon */
+.soon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(18px, 3vw, 32px); }
+.soon-card {
+  display: flex; flex-direction: column;
+  background: var(--panel); border: 2px dashed var(--purple);
+}
+.soon-art { width: 100%; aspect-ratio: 1024 / 500; object-fit: cover; border-bottom: 2px solid var(--line); }
+.soon-body { padding: clamp(16px, 3vw, 24px); }
+.soon-body > p { margin: 0 0 14px; }
+.soon-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.soon-head h3 { margin: 2px 0 0; font: 700 1.4rem/1.1 var(--body); color: #fff; }
+.soon-head .tag { margin: 0; color: var(--purple); }
+.soon-icon { width: 56px; height: 56px; border-radius: 14px; border: 2px solid var(--line); }
+.badge {
+  margin-left: auto; padding: 6px 8px; white-space: nowrap;
+  background: var(--green); color: #061000;
+  font: 700 .7rem/1 var(--pixel); text-transform: uppercase;
+  box-shadow: 3px 3px 0 0 var(--purple);
+}
+.mini-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.mini-shots.tall { grid-template-columns: repeat(2, minmax(0, 160px)); }
+.mini-shots img { width: 100%; border: 2px solid var(--line); }
+
 .rules { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 .rules li { background: var(--panel); border: 2px solid var(--line); padding: 18px; color: var(--muted); }
 .rules strong { display: block; margin-bottom: 6px; color: var(--green); font: 700 1rem/1.2 var(--pixel); text-transform: uppercase; }
