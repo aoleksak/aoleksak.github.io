@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Links · Black Market Apps</title>
+  <meta name="description" content="Black Market Apps games and channels in one place.">
+  <link rel="canonical" href="https://blackmarketapps.studio/links/">
+  <meta property="og:title" content="Black Market Apps">
+  <meta property="og:description" content="Games you weren't supposed to find. Play free on Google Play.">
+  <meta property="og:image" content="https://blackmarketapps.studio/assets/og-card.png">
+  <meta name="theme-color" content="#070908">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* One phone-width column: the link-in-bio page for every social profile. */
+    .links { max-width: 480px; margin: 0 auto; padding: 32px max(16px, env(safe-area-inset-left, 0px)) 48px; display: grid; gap: 14px; }
+    .links-head { display: grid; justify-items: center; gap: 8px; text-align: center; margin-bottom: 8px; }
+    .links-head img { border-radius: 50%; box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--green); }
+    .links-head h1 { margin: 6px 0 0; font: 700 clamp(1rem, 5.4vw, 1.4rem)/1.1 var(--pixel); text-transform: uppercase; }
+    .links > * { min-width: 0; }
+    .link-card > div { min-width: 0; }
+    .link-card .note { border: 0; padding: 0; margin: 2px 0 0; }
+    .links-head p { margin: 0; color: var(--muted); }
+    .link-card { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: center; padding: 14px; background: var(--panel); border: 2px solid var(--line); color: var(--text); text-decoration: none; }
+    .link-card:hover { border-color: var(--green); color: #fff; }
+    .link-card img { width: 64px; height: 64px; border-radius: 14px; }
+    .link-card strong { display: block; font: 700 .95rem/1.2 var(--pixel); text-transform: uppercase; }
+    .link-card span { display: block; color: var(--muted); font-size: .92rem; }
+    .link-card.hero-link { border-color: var(--green); box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--green); }
+    .link-card .note { font-size: .8rem; color: var(--muted); }
+    .row { display: block; padding: 14px; text-align: center; background: var(--panel); border: 2px solid var(--line); color: var(--text); text-decoration: none; font: 400 .9rem/1 var(--pixel); text-transform: uppercase; }
+    .row:hover { border-color: var(--purple); color: #fff; }
+    .socials { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .links-foot { margin-top: 12px; text-align: center; color: var(--muted); font-size: .85rem; }
+  </style>
+</head>
+<body>
+  <main class="links">
+    <header class="links-head">
+      <img src="/assets/fox-512.png" width="96" height="96" alt="">
+      <h1>Black Market Apps</h1>
+      <p>Games you weren't supposed to find.</p>
+    </header>
+
+    <a class="link-card hero-link" data-app="com.peanutwarrior.game" href="https://play.google.com/store/apps/details?id=com.peanutwarrior.game">
+      <img src="https://play-lh.googleusercontent.com/Nr8KPx0CINeagVdWCfwU22mFwTBazoi6fEdyayL4i31C07ZYaRGwd5k4aiAeXveKINrmfZ_J1tCs2pcLOYkGl_0=w128-h128" width="64" height="64" alt="">
+      <div><strong>Peanut Warrior</strong><span>Free horde survivor on Google Play. One thumb, plays offline.</span></div>
+    </a>
+
+    <a class="link-card" id="lucky" data-app="com.luckyspin.vegasnights" href="https://play.google.com/store/apps/details?id=com.luckyspin.vegasnights">
+      <img src="https://play-lh.googleusercontent.com/JjP19_UgHdHbQoGQGU3KgYcMI5T5ajS3g4n54ZylHvkTjkulfHe-a6Rlsa_TuDhXst1vU8BoEpDJ5kcJudGwaA=w128-h128" width="64" height="64" alt="">
+      <div><strong>Lucky Spin (18+)</strong><span>Slot machine show cabinets.</span><span class="note">Virtual credits only, no real money.</span></div>
+    </a>
+
+    <a class="row" href="https://www.youtube.com/@BlackMarketApps">▶ Trailers &amp; Shorts on YouTube</a>
+    <a class="row" href="https://play.google.com/store/apps/dev?id=5495606805431924650">All our apps on Google Play</a>
+
+    <nav class="socials" aria-label="Follow Black Market Apps">
+      <a class="row" href="https://www.instagram.com/blackmarketapps/">Instagram</a>
+      <a class="row" href="https://www.tiktok.com/@blackmarketapps">TikTok</a>
+      <a class="row" href="https://www.threads.com/@blackmarketapps">Threads</a>
+      <a class="row" href="/">Website</a>
+    </nav>
+
+    <p class="links-foot">© 2026 Black Market Apps · <a href="/privacy.html">Privacy</a></p>
+  </main>
+  <script>
+    // Each profile links here with ?src=<platform>. Tag the Play links so Play Console
+    // shows installs per platform, and keep Lucky Spin off the TikTok version.
+    (function () {
+      var src = (new URLSearchParams(location.search).get("src") || "links").toLowerCase().replace(/[^a-z]/g, "").slice(0, 20) || "links";
+      document.querySelectorAll("a[data-app]").forEach(function (a) {
+        var ref = "utm_source=" + src + "&utm_medium=social&utm_campaign=linkinbio";
+        a.href = "https://play.google.com/store/apps/details?id=" + a.dataset.app + "&referrer=" + encodeURIComponent(ref);
+      });
+      if (src === "tiktok") document.getElementById("lucky").remove();
+    })();
+  </script>
+</body>
+</html>
